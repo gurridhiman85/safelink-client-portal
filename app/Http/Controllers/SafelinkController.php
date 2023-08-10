@@ -63,8 +63,8 @@ class SafelinkController extends Controller
             $price[] = (int)$unit_price + (float)$vat_amount;
         }
 
-        $va = config('constant.IPaymu_VA'); //'0000005755180590';//config('constant.VA');
-        $apiKey = config('constant.IPaymu_APIKEY'); //'SANDBOXEDF3F940-53A8-4746-A846-048A6398526E'; //get on iPaymu dashboard
+        $va = config('constant.IPaymu_VA'); 
+        $apiKey = config('constant.IPaymu_APIKEY');
 
         $url = config('constant.IPaymu_URL');
         // $url          = 'https://my.ipaymu.com/api/v2/payment'; // for production mode
@@ -161,8 +161,8 @@ class SafelinkController extends Controller
         }
 
 
-        $va = env('IPaymu_URL', '0000005755180590'); //'0000005755180590';//config('constant.VA');
-        $apiKey = env('IPaymu_VA', 'SANDBOXEDF3F940-53A8-4746-A846-048A6398526E'); //'SANDBOXEDF3F940-53A8-4746-A846-048A6398526E'; //get on iPaymu dashboard
+        $va = env('IPaymu_URL', '');
+        $apiKey = env('IPaymu_VA', ''); 
 
         $url = env('IPaymu_APIKEY', 'https://sandbox.ipaymu.com/api/v2/payment'); //'https://sandbox.ipaymu.com/api/v2/payment'; // for development mode
         // $url          = 'https://my.ipaymu.com/api/v2/payment'; // for production mode
@@ -214,8 +214,8 @@ class SafelinkController extends Controller
         $ret = curl_exec($ch);
         curl_close($ch);*/
 
-        /*$va           = '1179000899'; //get on iPaymu dashboard
-        $apiKey       = 'QbGcoO0Qds9sQFDmY0MWg1Tq.xtuh1'; //get on iPaymu dashboard
+        /*$va           = ''; //get on iPaymu dashboard
+        $apiKey       = ''; //get on iPaymu dashboard
 
         $url          = 'https://sandbox.ipaymu.com/api/v2/payment'; // for development mode
         // $url          = 'https://my.ipaymu.com/api/v2/payment'; // for production mode
@@ -642,7 +642,7 @@ class SafelinkController extends Controller
             'Content-Type: application/json',
         ]);
         curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        curl_setopt($ch, CURLOPT_USERPWD, 'eddy@brightcorporation.biz:Safelink2030');
+        curl_setopt($ch, CURLOPT_USERPWD, 'email:password');
         //curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($request_dody));
 
         $response = curl_exec($ch);
